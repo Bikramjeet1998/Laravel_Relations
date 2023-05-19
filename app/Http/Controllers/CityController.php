@@ -12,11 +12,26 @@ class CityController extends Controller
 {
     public function index()
     {
-        $country = Country::get();
-        $state = State::get();
-        $city = City::get();
 
-        return view('city')->with(['countries' =>  $country, 'state' => $state,  'city' => $city]);
+
+
+        // $country = Country::with('states')->get(); //we are getting counties with states and cities
+        $country = Country::with('states')->get();
+
+        $stateNames = $country->flatMap(function ($country) {
+            return $country->states->pluck('state_name');
+        });
+
+        dd($stateNames);
+
+        return view('table')->with(['countries' =>  $country]);
+
+
+        // $country = Country::get();
+        // $state = State::get();
+        // $city = City::get();
+
+        // return view('city')->with(['countries' =>  $country, 'state' => $state,  'city' => $city]);
     }
     public function store(Request $request)
     {
