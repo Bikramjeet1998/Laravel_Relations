@@ -10,9 +10,6 @@ class StateController extends Controller
 {
     public function showState()
     {
-
-
-
         // foreach ($country as $post) {
         //     echo ($post->id);
         // }

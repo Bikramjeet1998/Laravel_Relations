@@ -6,13 +6,13 @@
         <nav class="navbar .navbar-inverse">
             <div class="container">
                 <div class="navbar-header">
-                    <a class="navbar-brand fs-3" href="#">BikramApp</a>
+                    <a class="navbar-brand fs-4" href="#">BikramApp</a>
                 </div>
                 <ul class="nav navbar-inline mx-auto">
-                    <a class="navbar-brand mx-5 fs-3" href="#">Home</a>
-                    <a class="active navbar-brand mx-5 fs-3" href="{{ url('/showCountry') }}">Add Country</a>
-                    <a class="active navbar-brand  mx-5 fs-3" href="{{ url('/showState') }}">Add State</a>
-                    <a class="active navbar-brand mx-5 fs-3" href="{{ url('/showCity') }}">Add City</a>
+                    <a class="navbar-brand mx-5 fs-4" href="#">Home</a>
+                    <a class="active navbar-brand mx-5 fs-4" href="{{ url('/showCountry') }}">Add Country</a>
+                    <a class="active navbar-brand  mx-5 fs-4" href="{{ url('/showState') }}">Add State</a>
+                    <a class="active navbar-brand mx-5 fs-4" href="{{ url('/showCity') }}">Add City</a>
                 </ul>
             </div>
         </nav>

@@ -15,6 +15,7 @@ class CityController extends Controller
         $country = Country::get();
         $state = State::get();
         $city = City::get();
+
         return view('city')->with(['countries' =>  $country, 'state' => $state,  'city' => $city]);
     }
     public function store(Request $request)
