@@ -12,8 +12,7 @@ class CityController extends Controller
 {
     public function index()
     {
-        $country = City::with('state', 'state.country')->get();
-
+        $country = City::with('state.country')->get();
         return view('table')->with(['countries' =>  $country]);
 
 

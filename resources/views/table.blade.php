@@ -7,18 +7,19 @@
             <thead class="thead-dark fw-bold">
                 <tr>
                     <th> City</th>
-                    <th> state</th>
+                    <th> State</th>
                     <th> Country</th>
                 </tr>
             </thead>
 
 
             <tbody>
-                @foreach ($countries as $country)
+
+                @foreach ($countries as $city)
                     <tr>
-                        <td>{{ $country->city_name }}</td>
-                        <td>{{ $country->state->state_name }}</td>
-                        <td>{{ $country->state->country->name }}</td>
+                        <td>{{ $city->city_name }}</td>
+                        <td>{{ $city->state->state_name }}</td>
+                        <td>{{ $city->state->country->name }}</td>
                     </tr>
                 @endforeach
             </tbody>

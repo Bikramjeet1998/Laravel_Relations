@@ -10,21 +10,12 @@ class CountryController extends Controller
 {
     public function index()
     {
-        //$country = Country::has('states', '=', 1)->with('states')->get();
-        // $country = Country::whereHas('states', function ($query) {
-        //     return $query->whereNull('created_at')->has('cities');
-        // })->with('states')->get();
+
+        $country = Country::with('countryCity')->get();
         // dd($country);
-        // foreach ($country->states as $key => $state) {
-        //     dd($state->cities);
-        // }
-        // $country = Country::doesnthave('states')->get();
-        // $country = Country::whereHas('states', function ($query) {
-        //     return $query->where('state_name', '=', 'ambala')->doesnthave('cities');
-        // })->get();
-        // dd($country);
-        $country = Country::get();
-        return view('country')->with(['countries' =>  $country]);
+        return view('countryCity')->with(['countries' =>  $country]);
+        // $country = Country::get();
+        // return view('country')->with(['countries' =>  $country]);
     }
     public function store(Request $request)
     {
@@ -33,12 +24,30 @@ class CountryController extends Controller
         $add_country->save();
         return redirect()->back()->with('message', 'added succesfully');
     }
+
+
+
+
+
     // public function fetchCountry()
     // {
     //     $data['countries'] = Country::get();
 
     //     return response()->json($data);
     // }
+    //$country = Country::has('states', '=', 1)->with('states')->get();
+    // $country = Country::whereHas('states', function ($query) {
+    //     return $query->whereNull('created_at')->has('cities');
+    // })->with('states')->get();
+    // dd($country);
+    // foreach ($country->states as $key => $state) {
+    //     dd($state->cities);
+    // }
+    // $country = Country::doesnthave('states')->get();
+    // $country = Country::whereHas('states', function ($query) {
+    //     return $query->where('state_name', '=', 'ambala')->doesnthave('cities');
+    // })->get();
+    // dd($country);
 }
 
 
